@@ -16,6 +16,16 @@
   }
 }
 
+@font-face {
+  font-family: 'Antonio';
+  src: url('/fonts/Antonio-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: 'League Spartan';
+  src: url('/fonts/LeagueSpartan-VariableFont_wght.ttf');
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
