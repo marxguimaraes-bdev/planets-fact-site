@@ -3,7 +3,7 @@ import Card from '@/components/card';
 
 describe('Card', () => {
   it('renders the title', () => {
-    render(<Card title="Piece of info" />);
+    render(<Card title="Piece of info">Info</Card>);
 
     const title = screen.getByText(/Piece of info/);
     expect(title).toBeInTheDocument();
