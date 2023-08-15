@@ -26,6 +26,17 @@ type ContentProps = {
   tabs: Tab[];
 };
 
+const buttonClassNames: any = {
+  Mercury: 'border-mercury md:border-transparent md:bg-mercury',
+  Venus: 'border-venus md:border-transparent md:bg-venus',
+  Earth: 'border-earth md:border-transparent md:bg-earth',
+  Mars: 'border-mars md:border-transparent md:bg-mars',
+  Jupiter: 'border-jupiter md:border-transparent md:bg-jupiter',
+  Saturn: 'border-saturn md:border-transparent md:bg-saturn',
+  Uranus: 'border-uranus md:border-transparent md:bg-uranus',
+  Neptune: 'border-neptune md:border-transparent md:bg-neptune',
+};
+
 export default function Content({ planet, tabs }: ContentProps) {
   const [activeTab, setActiveTab] = useState(0);
 
@@ -40,8 +51,8 @@ export default function Content({ planet, tabs }: ContentProps) {
             role="tab"
             aria-selected={index === activeTab}
             className={
-              `flex flex-row font-league-spartan text-[9px] text-center font-spartan-bold uppercase tracking-[0.12rem] gap-x-2 pt-5 pb-4
-              ${index === activeTab ? 'border-white md:border-transparent md:bg-purple-heart' : 'border-transparent hover:bg-manatee md:border-white/20'} border-b-[0.25rem]
+              `flex flex-row font-league-spartan text-[9px] text-center font-spartan-bold uppercase tracking-[0.12rem] gap-x-2 pt-5 pb-4 border-b-[0.25rem]
+              ${index === activeTab ? buttonClassNames[planet] : 'border-transparent hover:bg-manatee md:border-white/20'}
               md:border lg:text-heading-3 md:px-10 md:py-4`
             }
             disabled={index === activeTab}
