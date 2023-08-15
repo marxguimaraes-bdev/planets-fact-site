@@ -1,4 +1,4 @@
-[
+export const getData = () => ([
   {
     "name": "Mercury",
     "overview": {
@@ -191,4 +191,4 @@
       "geology": "/images/geology-neptune.png"
     }
   }
-]
+]);

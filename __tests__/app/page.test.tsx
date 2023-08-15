@@ -1,4 +1,4 @@
-import { getByText, render, screen } from '@testing-library/react';
+import { getByText, render, screen, within } from '@testing-library/react';
 import IndexPage from '@/app/page';
 
 describe('IndexPage', () => {
@@ -24,7 +24,8 @@ describe('IndexPage', () => {
     ];
 
     planets.forEach((planet) => {
-      const element = screen.getByText(planet);
+      const navBar = screen.getByRole('navigation');
+      const element = within(navBar).getByText(planet);
       expect(element).toBeInTheDocument();
     });
   });
