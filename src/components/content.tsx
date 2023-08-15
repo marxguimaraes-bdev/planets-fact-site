@@ -22,17 +22,17 @@ type Tab = {
 };
 
 type ContentProps = {
-  planet?: string;
+  planet: string;
   tabs: Tab[];
 };
 
-export default function Content({ planet = 'Earth', tabs }: ContentProps) {
+export default function Content({ planet, tabs }: ContentProps) {
   const [activeTab, setActiveTab] = useState(0);
 
   const currentTab = tabs[activeTab];
  
   return (
-    <div className="grid flex-grow md:grid-cols-2 lg:py-10 lg:gap-y-4">
+    <main className="grid flex-grow md:grid-cols-2 lg:py-10 lg:gap-y-4">
       <div role="tablist" className="flex flex-row justify-between px-6 border-b border-white/20 md:gap-y-4 md:px-10 md:justify-center md:flex-col md:border-b-0 md:order-last lg:mx-[10.3rem] lg:px-0 lg:justify-start">
         { tabs.map((tab, index) => (
           <button
@@ -58,12 +58,12 @@ export default function Content({ planet = 'Earth', tabs }: ContentProps) {
         { currentTab.hoverImage && (<Image src={currentTab.hoverImage.path} alt={currentTab.hoverImage.alt} width={70} height={70} className="absolute self-end -mb-7"/>)}
       </div>
       <div className="flex flex-col text-center text-body gap-y-2 mx-6 md:justify-center md:mx-[2.44rem] lg:mx-[10.3rem] md:text-start md:mr-0 lg:pt-20 lg:justify-between">
-        <span className="font-antonio text-heading-2 uppercase lg:text-heading-1">{planet}</span>
+        <h1 className="font-antonio text-heading-2 uppercase lg:text-heading-1">{planet}</h1>
         <span className="font-league-spartan leading-[1.375rem] lg:leading-body">{currentTab.content}</span>
         <span className="text-white/50">
           Source: <Link target="_blank" href={currentTab.source} className="underline font-spartan-bold">Wikipedia<Image src="/images/icon-source.svg" alt="External link icon" width={12} height={12} className="inline-block ml-1" /></Link>
         </span>
       </div>
-    </div>
+    </main>
   );
 }

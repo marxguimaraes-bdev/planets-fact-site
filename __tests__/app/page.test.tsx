@@ -1,32 +1,13 @@
-import { getByText, render, screen, within } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import IndexPage from '@/app/page';
 
 describe('IndexPage', () => {
-  it('renders the navigation bar', () => {
+  it('renders the earth page', () => {
     render(<IndexPage />);
 
-    const nav = screen.getByText(/The Planets/);
-    expect(nav).toBeInTheDocument();
-  });
+    const main = screen.getByRole('main');
+    const title = within(main).getByText(/Earth/, { selector: 'h1' });
 
-  it('renders all the planets', () => {
-    render(<IndexPage />);
-
-    const planets = [
-      'Mercury',
-      'Venus',
-      'Earth',
-      'Mars',
-      'Jupiter',
-      'Saturn',
-      'Uranus',
-      'Neptune'
-    ];
-
-    planets.forEach((planet) => {
-      const navBar = screen.getByRole('navigation');
-      const element = within(navBar).getByText(planet);
-      expect(element).toBeInTheDocument();
-    });
+    expect(title).toBeInTheDocument();
   });
 });

@@ -39,7 +39,7 @@ describe('Content', () => {
 
   describe('Default tab', () => {
     it('renders the tab title, information and source', () => {
-      render(<Content tabs={mockTabs} />);
+      render(<Content planet="Tatooine" tabs={mockTabs} />);
   
       const title = screen.getByText(/Bar/);
       const content = screen.getByText(/Lorem ipsum/);
@@ -51,7 +51,7 @@ describe('Content', () => {
     });
   
     it('renders the image', () => {
-      render(<Content tabs={mockTabs} />);
+      render(<Content planet="Tatooine" tabs={mockTabs} />);
   
       const image = screen.getByAltText(/Some image/);
       expect(image).toHaveAttribute('src', '/path/to/image.svg');
@@ -60,7 +60,7 @@ describe('Content', () => {
 
   describe('Other tabs', () => {
     it('renders the tab title, information and source', async () => {
-      render(<Content tabs={mockTabs} />);
+      render(<Content planet="Tatooine" tabs={mockTabs} />);
 
       const button = screen.getByRole('tab', { name: /Far/ });
       await userEvent.click(button);
@@ -75,7 +75,7 @@ describe('Content', () => {
     });
 
     it('renders the image', async () => {
-      render(<Content tabs={mockTabs} />);
+      render(<Content planet="Tatooine" tabs={mockTabs} />);
 
       const button = screen.getByRole('tab', { name: /Far/ });
       await userEvent.click(button);
