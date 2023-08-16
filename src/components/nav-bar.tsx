@@ -45,11 +45,12 @@ export default function NavBar({ title, items = [] }: NavBarProps) {
       }>
       <div className="flex flex-row justify-between md:justify-around">
         <div className="font-antonio text-[28px] tracking-[-1.05px] px-6 py-4 text-start md:text-center lg:text-start">{title}</div>
-        <button role="menu" onClick={toggleMenu} className="px-6 md:hidden">
+        <button onClick={toggleMenu} className="px-6 md:hidden">
           <Image src="/images/icon-hamburger.svg" alt="three bar icon" width={24} height={17} className={showMenu ? 'opacity-20' : ''} />
         </button>
       </div>
       <div
+        role="menu"
         className={
           `${showMenu ? 'w-full px-6 border-t border-white/20' : 'w-0'} transition-[width] ease-linear duration-200 fixed
           flex flex-col mt-[4.7rem] overflow-x-hidden h-full bg-black-russian
@@ -60,6 +61,7 @@ export default function NavBar({ title, items = [] }: NavBarProps) {
           <Link
             key={label}
             href={href}
+            role="menuitem"
             className={`flex flex-row py-5 items-center gap-x-6 border-t-4 border-transparent ${hoverClassNames[label]}`}>
             <span className={`${circleColors[label]} rounded-full h-5 w-5 block md:hidden`}></span>
             <div className="grow font-league-spartan text-[15px] font-spartan-bold leading-heading-3 tracking-[0.08525rem]">{label}</div>
