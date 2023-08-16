@@ -39,7 +39,7 @@ export default function NavBar({ title, items = [] }: NavBarProps) {
   const toggleMenu = () => setShowMenu(!showMenu);
 
   return (
-    <nav className={`flex flex-col ${showMenu ? 'h-full block fixed bg-stars bg-black-russian w-full' : 'h-auto'} uppercase md:justify-between md:h-auto border-b border-white/20 lg:flex-row`}>
+    <nav className={`z-10 flex flex-col ${showMenu ? 'h-full block fixed bg-stars bg-black-russian w-full' : 'h-auto'} uppercase md:justify-between md:h-auto border-b border-white/20 lg:flex-row`}>
       <div className="flex flex-row justify-between md:justify-around">
         <div className="font-antonio text-[28px] tracking-[-1.05px] px-6 py-4 text-start md:text-center lg:text-start">{title}</div>
         <button role="menu" onClick={toggleMenu} className="px-6 md:hidden">

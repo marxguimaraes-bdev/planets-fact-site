@@ -38,14 +38,25 @@ const buttonClassNames: PlanetT = {
   Neptune: 'border-neptune md:border-transparent md:bg-neptune',
 };
 
+const planetImageSizeClassNames: PlanetT = {
+  Mercury: 'max-h-mercury w-auto md:max-h-md-mercury lg:max-h-lg-mercury my-10',
+  Venus: 'max-h-venus w-auto md:max-h-md-venus lg:max-h-lg-venus',
+  Earth: 'max-h-earth w-auto md:max-h-md-earth lg:max-h-lg-earth',
+  Mars: 'max-h-mars w-auto md:max-h-md-mars lg:max-h-lg-mars',
+  Jupiter: 'max-h-jupiter w-auto md:max-h-md-jupiter lg:max-h-lg-jupiter',
+  Saturn: 'max-h-saturn w-auto md:max-h-md-saturn lg:max-h-lg-saturn',
+  Uranus: 'max-h-uranus w-auto md:max-h-md-uranus lg:max-h-lg-uranus',
+  Neptune: 'max-h-neptune w-auto md:max-h-md-neptune lg:max-h-lg-neptune',
+}
+
 export default function Content({ planet, tabs }: ContentProps) {
   const [activeTab, setActiveTab] = useState(0);
 
   const currentTab = tabs[activeTab];
  
   return (
-    <main className="grid flex-grow md:grid-cols-2 lg:py-10 lg:gap-y-4">
-      <div role="tablist" className="flex flex-row justify-between px-6 border-b border-white/20 md:gap-y-4 md:px-10 md:justify-center md:flex-col md:border-b-0 md:order-last lg:mx-[10.3rem] lg:px-0 lg:justify-start">
+    <main className="grid flex-grow md:grid-cols-2 lg:py-10 lg:gap-y-4 lg:mx-[10.3rem]">
+      <div role="tablist" className="flex flex-row justify-between px-6 border-b border-white/20 md:gap-y-4 md:px-10 md:justify-center md:flex-col md:border-b-0 md:order-last lg:mx-0 lg:px-0 lg:justify-start">
         { tabs.map((tab, index) => (
           <button
             key={tab.title.small}
@@ -65,11 +76,18 @@ export default function Content({ planet, tabs }: ContentProps) {
           </button>    
         ))}
       </div>
-      <div className="grid place-items-center p-10 md:col-span-2 lg:col-span-1 lg:row-span-2">
-        <Image src={currentTab.image.path} alt={currentTab.image.alt} width={173} height={173} className="lg:w-96 lg:h-96" />
-        { currentTab.hoverImage && (<Image src={currentTab.hoverImage.path} alt={currentTab.hoverImage.alt} width={70} height={70} className="absolute self-end -mb-7"/>)}
+      <div className="grid p-10 md:col-span-2 lg:col-span-1 lg:row-span-2">
+        <Image src={currentTab.image.path} alt={currentTab.image.alt} width={0} height={0} className={`place-self-center ${planetImageSizeClassNames[planet]}`} />
+        { currentTab.hoverImage && (
+          <Image
+            src={currentTab.hoverImage.path}
+            alt={currentTab.hoverImage.alt}
+            width={170}
+            height={170}
+            className="absolute justify-self-center self-center mt-[8rem] md:mt-[12rem] lg:mt-[20rem] h-[76px] w-auto md:h-[126px] lg:h-[199px]"
+          />)}
       </div>
-      <div className="flex flex-col text-center text-body gap-y-2 mx-6 md:justify-center md:mx-[2.44rem] lg:mx-[10.3rem] md:text-start md:mr-0 lg:pt-20 lg:justify-between">
+      <div className="flex flex-col text-center text-body gap-y-2 mx-6 md:justify-center md:mx-[2.44rem] lg:mx-0 md:text-start md:mr-0 lg:pt-20 lg:justify-between">
         <h1 className="font-antonio text-heading-2 uppercase lg:text-heading-1">{planet}</h1>
         <span className="font-league-spartan leading-[1.375rem] lg:leading-body">{currentTab.content}</span>
         <span className="text-white/50">
