@@ -15,9 +15,9 @@ export default function PlanetPage({ params: { planet } }: PlanetPageProps) {
   const planetData = getPlanet(planet);
 
   const tabs = [
-    { title: { small: 'Overview', normal: 'Overview' }, image: { path: planetData.images.planet, alt: "Planet image"}, content: planetData.overview.content, source: planetData.overview.source },
-    { title: { small: 'Structure', normal: 'Internal structure' }, image: { path: planetData.images.internal, alt: "Planet c section"}, content: planetData.structure.content, source: planetData.structure.source },
-    { title: { small: 'Geology', normal: 'Surface geology' }, image: { path: planetData.images.planet, alt: "Planet image"}, hoverImage: { path: planetData.images.geology, alt: "Planet geology"}, content: planetData.geology.content, source: planetData.geology.source },
+    { title: { small: 'Overview', normal: 'Overview' }, image: { path: planetData.images.planet, alt: "Planet surface"}, content: planetData.overview.content, source: planetData.overview.source },
+    { title: { small: 'Structure', normal: 'Internal structure' }, image: { path: planetData.images.internal, alt: "Planet core"}, content: planetData.structure.content, source: planetData.structure.source },
+    { title: { small: 'Geology', normal: 'Surface geology' }, image: { path: planetData.images.planet, alt: "Planet surface"}, hoverImage: { path: planetData.images.geology, alt: "Planet geology"}, content: planetData.geology.content, source: planetData.geology.source },
   ];
 
   return (

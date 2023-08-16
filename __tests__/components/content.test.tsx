@@ -1,6 +1,7 @@
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
 import Content from '@/components/content';
+import { PlanetT } from '@/app/enums/planet';
 
 const mockTabs = [
   {
@@ -31,7 +32,7 @@ const mockTabs = [
 
 describe('Content', () => {
   it('renders the title', () => {
-    render(<Content planet="Tatooine" tabs={mockTabs} />);
+    render(<Content planet={'Tatooine' as keyof PlanetT} tabs={mockTabs} />);
 
     const title = screen.getByText(/Tatooine/);
     expect(title).toBeInTheDocument();
@@ -39,7 +40,7 @@ describe('Content', () => {
 
   describe('Default tab', () => {
     it('renders the tab title, information and source', () => {
-      render(<Content planet="Tatooine" tabs={mockTabs} />);
+      render(<Content planet={'Tatooine' as keyof PlanetT} tabs={mockTabs} />);
   
       const title = screen.getByText(/Bar/);
       const content = screen.getByText(/Lorem ipsum/);
@@ -51,7 +52,7 @@ describe('Content', () => {
     });
   
     it('renders the image', () => {
-      render(<Content planet="Tatooine" tabs={mockTabs} />);
+      render(<Content planet={'Tatooine' as keyof PlanetT} tabs={mockTabs} />);
   
       const image = screen.getByAltText(/Some image/);
       expect(image).toHaveAttribute('src', '/path/to/image.svg');
@@ -60,7 +61,7 @@ describe('Content', () => {
 
   describe('Other tabs', () => {
     it('renders the tab title, information and source', async () => {
-      render(<Content planet="Tatooine" tabs={mockTabs} />);
+      render(<Content planet={'Tatooine' as keyof PlanetT} tabs={mockTabs} />);
 
       const button = screen.getByRole('tab', { name: /Far/ });
       await userEvent.click(button);
@@ -75,7 +76,7 @@ describe('Content', () => {
     });
 
     it('renders the image', async () => {
-      render(<Content planet="Tatooine" tabs={mockTabs} />);
+      render(<Content planet={'Tatooine' as keyof PlanetT} tabs={mockTabs} />);
 
       const button = screen.getByRole('tab', { name: /Far/ });
       await userEvent.click(button);

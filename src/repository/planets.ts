@@ -1,7 +1,8 @@
 import { getData } from '@/data/planets';
+import { PlanetT } from '@/app/enums/planet';
 
 type Planet = {
-  name: string;
+  name: keyof PlanetT;
   overview: {
     content: string;
     source: string;

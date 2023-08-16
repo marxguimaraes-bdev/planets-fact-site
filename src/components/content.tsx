@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { PlanetT } from "@/app/enums/planet";
 
 type Tab = {
   title: {
@@ -22,11 +23,11 @@ type Tab = {
 };
 
 type ContentProps = {
-  planet: string;
+  planet: keyof PlanetT;
   tabs: Tab[];
 };
 
-const buttonClassNames: any = {
+const buttonClassNames: PlanetT = {
   Mercury: 'border-mercury md:border-transparent md:bg-mercury',
   Venus: 'border-venus md:border-transparent md:bg-venus',
   Earth: 'border-earth md:border-transparent md:bg-earth',
