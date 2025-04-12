@@ -6,10 +6,7 @@ import { useState } from 'react';
 
 type NavBarProps = {
   title: string;
-  items?: {
-    label: string;
-    href: string;
-  }[];
+  items: string[];
 };
 
 const circleColors: any = {
@@ -34,7 +31,7 @@ const hoverClassNames: any = {
   Neptune: 'hover:border-neptune',
 };
 
-export default function NavBar({ title, items = [] }: NavBarProps) {
+export default function NavBar({ title, items }: NavBarProps) {
   const [showMenu, setShowMenu] = useState(false);
   const toggleMenu = () => setShowMenu(!showMenu);
 
@@ -55,16 +52,16 @@ export default function NavBar({ title, items = [] }: NavBarProps) {
           `${showMenu ? 'w-full px-6 border-t border-white/20' : 'w-0'} transition-[width] ease-linear duration-200 fixed
           flex flex-col mt-[4.7rem] overflow-x-hidden h-full bg-black-russian
           max-md:divide-y max-md:divide-white/20 md:relative md:bg-transparent md:flex md:flex-row md:w-auto md:gap-x-8
-          md:justify-around md:h-auto md:w-auto md:pt-0 md:my-6 lg:my-0 md:mx-12 lg:mx-10`
+          md:justify-around md:h-auto md:pt-0 md:my-6 lg:my-0 md:mx-12 lg:mx-10`
         }>
-        { items.map(({ label, href }) => (
+        { items.map((item) => (
           <Link
-            key={label}
-            href={href}
+            key={item}
+            href={`/${item}`}
             role="menuitem"
-            className={`flex flex-row py-5 items-center gap-x-6 border-t-4 border-transparent ${hoverClassNames[label]}`}>
-            <span className={`${circleColors[label]} rounded-full h-5 w-5 block md:hidden`}></span>
-            <div className="grow font-league-spartan text-[15px] font-spartan-bold leading-heading-3 tracking-[0.08525rem]">{label}</div>
+            className={`flex flex-row py-5 items-center gap-x-6 border-t-4 border-transparent ${hoverClassNames[item]}`}>
+            <span className={`${circleColors[item]} rounded-full h-5 w-5 block md:hidden`}></span>
+            <div className="grow font-league-spartan text-[15px] font-spartan-bold leading-heading-3 tracking-[0.08525rem]">{item}</div>
             <Image src="/images/icon-chevron.svg" alt="arrow" width={8} height={16} className="md:hidden" />
           </Link>
         )) }

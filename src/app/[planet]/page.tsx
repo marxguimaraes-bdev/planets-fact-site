@@ -3,7 +3,7 @@ import Card from '@/components/card';
 import Content from '@/components/content';
 import { getPlanet, getAllPlanets } from '@/repository/planets';
 
-const planets = getAllPlanets().map(({ name }) => ({ label: name, href: `/${name}`}));
+const planetNames = getAllPlanets().map(({ name }) => (name));
 
 type PlanetPageProps = {
   params: {
@@ -22,7 +22,7 @@ export default function PlanetPage({ params: { planet } }: PlanetPageProps) {
 
   return (
     <div className="flex flex-col justify-stretch min-h-full bg-stars bg-black-russian">
-      <NavBar title="The Planets" items={planets} />
+      <NavBar title="The Planets" items={planetNames} />
       <Content planet={planetData.name} tabs={tabs} />
       <footer className="flex flex-col gap-y-2 mx-6 my-12 md:flex-row gap-x-3 md:mx-[2.44rem] lg:mx-[10.3rem]">
         <Card title="Rotation time">{planetData.rotation}</Card>
