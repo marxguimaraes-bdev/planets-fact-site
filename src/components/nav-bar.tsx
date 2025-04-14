@@ -49,10 +49,10 @@ export default function NavBar({ title, items }: NavBarProps) {
       <div
         role="menu"
         className={
-          `${showMenu ? 'w-full px-6' : 'w-0'} border-t border-white/20 pt-[1.25rem] transition-[width] ease-linear duration-200 fixed
+          `${showMenu ? 'w-full px-6' : 'w-0'} border-t md:border-0 border-white/20 pt-[1.25rem] md:pt-0 transition-[width] ease-linear duration-200 fixed
           flex flex-col mt-[4.7rem] overflow-x-hidden h-full bg-black-russian
           max-md:divide-y max-md:divide-white/20
-          md:relative md:bg-transparent md:flex md:flex-row md:items-center md:w-auto md:gap-x-[2.0625rem] md:justify-around md:h-auto md:mt-[0.3125rem] lg:my-0 md:mx-12
+          md:relative md:bg-transparent md:flex md:flex-row md:items-center md:w-auto md:gap-x-[2.0625rem] md:justify-around md:h-auto md:mt-[0.4375rem] lg:my-0 md:mx-12
           lg:mx-10`
         }>
         { items.map((item) => (
