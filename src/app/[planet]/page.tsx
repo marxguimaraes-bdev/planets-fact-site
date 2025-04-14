@@ -11,7 +11,8 @@ type PlanetPageProps = {
   };
 };
 
-export default function PlanetPage({ params: { planet } }: PlanetPageProps) {
+export default async function PlanetPage({ params }: PlanetPageProps) {
+  const { planet } = await params;
   const planetData = getPlanet(planet);
 
   const tabs = [
