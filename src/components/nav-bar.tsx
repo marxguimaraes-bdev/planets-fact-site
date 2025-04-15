@@ -37,7 +37,7 @@ export default function NavBar({ title, items }: NavBarProps) {
 
   return (
     <nav className={
-      `z-10 flex flex-col uppercase md:justify-between lg:flex-row lg:max-w-[1440px] lg:gap-x-[594px] lg:mx-auto
+      `z-10 flex flex-col uppercase md:justify-between lg:flex-row lg:max-w-[90rem] lg:gap-x-[37rem] lg:mx-auto
       ${showMenu ? 'h-full block fixed bg-stars bg-black-russian w-full' : 'h-auto'}`
     }>
       <div className="flex flex-row justify-between px-6 py-4 lg:px-0 md:py-8 md:justify-around">
