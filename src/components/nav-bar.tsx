@@ -49,7 +49,7 @@ export default function NavBar({ title, items }: NavBarProps) {
       <div
         role="menu"
         className={
-          `${showMenu ? 'w-full px-6' : 'w-0'} border-t md:border-0 border-white/20 pt-[1.25rem] md:pt-0 transition-[width] ease-linear duration-200 fixed
+          `${showMenu ? 'w-full px-6' : 'w-0'} border-t md:border-0 border-white/20 pt-[1.25rem] md:pt-0 transition-[width] ease-linear duration-300 fixed
           flex flex-col mt-[4.7rem] overflow-x-hidden h-full bg-black-russian
           max-md:divide-y max-md:divide-white/20
           md:relative md:bg-transparent md:flex md:flex-row md:items-center md:w-auto md:gap-x-[2.0625rem] md:justify-around md:h-auto md:mt-[0.4375rem] lg:my-0 md:mx-12
@@ -60,7 +60,7 @@ export default function NavBar({ title, items }: NavBarProps) {
             key={item}
             href={`/${item}`}
             role="menuitem"
-            className={`font-spartan flex flex-row pt-5 pb-5 md:pt-0 md:pb-[1.6875rem] lg:pb-0 box-border items-center gap-x-6 border-t-4 border-transparent lg:h-full ${hoverClassNames[item]}`}>
+            className={`font-spartan flex flex-row pt-5 pb-5 md:pt-0 md:pb-[1.6875rem] lg:pb-0 box-border items-center gap-x-6 border-t-4 border-transparent lg:h-full lg:transition-[border] lg:duration-300 lg:ease-linear ${hoverClassNames[item]}`}>
             <span className={`${circleColors[item]} rounded-full h-5 w-5 block md:hidden`}></span>
             <div className={`grow font-league-spartan text-[0.9375rem] font-spartan-bold leading-heading-3 tracking-[0.085rem] md:text-heading-4 md:leading-heading-3 md:tracking-heading-4`}>
               {item}
