@@ -24,6 +24,7 @@ export default async function PlanetPage({ params }: PlanetPageProps) {
   return (
     <div className="flex flex-col justify-stretch min-h-full bg-stars bg-black-russian">
       <NavBar title="The Planets" items={planetNames} />
+      <div className="border-t border-white/20 w-full"/>
       <Content planet={planetData.name} tabs={tabs} />
       <footer className="flex flex-col gap-y-2 mx-6 my-12 md:flex-row gap-x-3 md:mx-[2.44rem] lg:mx-[10.3rem]">
         <Card title="Rotation time">{planetData.rotation}</Card>

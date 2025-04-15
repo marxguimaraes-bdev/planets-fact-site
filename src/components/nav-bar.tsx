@@ -37,7 +37,7 @@ export default function NavBar({ title, items }: NavBarProps) {
 
   return (
     <nav className={
-      `z-10 flex flex-col uppercase border-b border-white/20 md:justify-between lg:flex-row
+      `z-10 flex flex-col uppercase md:justify-between lg:flex-row lg:max-w-[1440px] lg:gap-x-[594px] lg:mx-auto
       ${showMenu ? 'h-full block fixed bg-stars bg-black-russian w-full' : 'h-auto'}`
     }>
       <div className="flex flex-row justify-between px-6 py-4 lg:px-0 md:py-8 md:justify-around">
@@ -52,8 +52,7 @@ export default function NavBar({ title, items }: NavBarProps) {
           `${showMenu ? 'w-full px-6' : 'w-0'} border-t md:border-0 border-white/20 pt-[1.25rem] md:pt-0 transition-[width] ease-linear duration-300 fixed
           flex flex-col mt-[4.7rem] overflow-x-hidden h-full bg-black-russian
           max-md:divide-y max-md:divide-white/20
-          md:relative md:bg-transparent md:flex md:flex-row md:items-center md:w-auto md:gap-x-[2.0625rem] md:justify-around md:h-auto md:mt-[0.4375rem] lg:my-0 md:mx-12
-          lg:mx-10`
+          md:relative md:bg-transparent md:flex md:flex-row md:items-center md:w-auto md:gap-x-[2.0625rem] md:justify-around md:h-auto md:mt-[0.4375rem] lg:my-0 md:mx-12 lg:mx-0`
         }>
         { items.map((item) => (
           <Link
