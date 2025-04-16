@@ -55,7 +55,7 @@ export default function Content({ planet, tabs }: ContentProps) {
   const currentTab = tabs[activeTab];
  
   return (
-    <main className="grid flex-grow md:grid-cols-2 lg:py-[4.125rem] lg:gap-y-4 lg:gap-x-[14.1875rem] lg:w-full lg:max-w-[1440px] lg:mx-auto lg:px-[10.3125rem]">
+    <main className="grid flex-grow md:grid-cols-2 lg:pt-[7.875rem] lg:gap-y-4 lg:gap-x-[14.1875rem] lg:w-full lg:max-w-[1440px] lg:mx-auto lg:px-[10.3125rem]">
       <div role="tablist" className="content_tablist flex flex-row justify-between px-6 border-b border-white/20 md:gap-y-4 md:px-10 md:justify-center md:flex-col md:border-b-0 md:order-last lg:mx-0 lg:px-0 lg:w-full lg:max-w-[21.875rem] lg:justify-start lg:place-self-end">
         { tabs.map((tab, index) => (
           <button
@@ -76,7 +76,7 @@ export default function Content({ planet, tabs }: ContentProps) {
           </button>    
         ))}
       </div>
-      <div className="content_planet_image grid h-fit pt-16 pb-16 md:pt-24 md:pb-[4.9375rem] md:col-span-2 lg:col-span-1 lg:row-span-2">
+      <div className="content_planet_image grid h-fit pt-16 pb-16 md:pt-24 md:pb-[4.9375rem] lg:pt-0 lg:pb-0 md:col-span-2 lg:col-span-1 lg:row-span-2">
         <div className={`content_planet_image_wrapper h-full w-auto ml-auto mr-auto lg:mr-0 lg:w-full ${planetImageSizeClassNames[planet]}`}>
           <img src={currentTab.image.path} alt={currentTab.image.alt} className={`h-full w-auto`} />
         </div>
@@ -87,7 +87,7 @@ export default function Content({ planet, tabs }: ContentProps) {
             className="absolute justify-self-center self-center mt-[8rem] md:mt-[12rem] lg:mt-[20rem] h-[76px] md:h-[126px] lg:h-[199px]"
           />)}
       </div>
-      <div className="content_planet_info flex flex-col text-center text-body mx-6 md:justify-center md:mx-[2.44rem] lg:max-w-[21.875rem] lg:place-self-end md:text-start md:mr-0 lg:pt-[3.75rem] lg:justify-between">
+      <div className="content_planet_info flex flex-col text-center text-body mx-6 md:justify-center md:mx-[2.44rem] lg:max-w-[21.875rem] lg:place-self-end md:text-start md:mr-0 lg:max-h-[20.375rem] lg:justify-between">
         <h1 className="content_planet_name font-antonio text-heading-2 uppercase lg:text-heading-1">{planet}</h1>
         <span className="content_planet_facts font-league-spartan text-heading-4 lg:text-body tracking-[0px] leading-[1.375rem] lg:leading-body mt-[1rem]">{currentTab.content}</span>
         <span className="content_planet_source text-white/50 mt-[0.625rem] text-heading-3 leading-heading-3">
