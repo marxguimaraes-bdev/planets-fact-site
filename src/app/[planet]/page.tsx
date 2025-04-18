@@ -25,7 +25,7 @@ export default function PlanetPage({ params: { planet } }: PlanetPageProps) {
       <NavBar title="The Planets" items={planetNames} />
       <div className="border-t border-white/20 w-full"/>
       <Content planet={planetData.name} tabs={tabs} />
-      <footer className="flex flex-col gap-y-2 mx-6 mt-[1.75rem] md:mt-[1.6875rem] lg:mt-[5.4375rem] mb-[2.9375rem] md:mb-[36px] lg:mb-[56px] md:flex-row md:gap-x-[0.6875rem] lg:gap-x-[1.875rem] md:mx-[2.44rem] lg:w-full lg:max-w-[90rem] lg:px-[10.3125rem] lg:mx-auto">
+      <footer className="flex flex-col gap-y-2 mx-6 mt-[1.75rem] md:mt-[1.6875rem] xl:mt-[5.4375rem] mb-[2.9375rem] md:mb-[36px] xl:mb-[56px] md:flex-row md:gap-x-[0.6875rem] xl:gap-x-[1.875rem] md:mx-[2.44rem] xl:w-full xl:max-w-[90rem] xl:px-[10.3125rem] xl:mx-auto">
         <Card title="Rotation time">{planetData.rotation}</Card>
         <Card title="Revolution time">{planetData.revolution}</Card>
         <Card title="Radius">{planetData.radius}</Card>

@@ -37,11 +37,11 @@ export default function NavBar({ title, items }: NavBarProps) {
 
   return (
     <nav className={
-      `z-10 flex flex-col uppercase md:justify-between lg:flex-row lg:max-w-[90rem] lg:gap-x-[37rem] lg:mx-auto
+      `z-10 flex flex-col uppercase md:justify-between xl:flex-row xl:max-w-[90rem] xl:gap-x-[37rem] xl:mx-auto
       ${showMenu ? 'h-full block fixed bg-stars bg-black-russian w-full' : 'h-auto'}`
     }>
-      <div className="flex flex-row justify-between px-6 py-4 lg:px-0 md:py-8 md:justify-around">
-        <div className="font-antonio text-[1.75rem] tracking-[-0.0656rem] md:leading-none text-start md:text-center lg:text-start lg:mx-8">{title}</div>
+      <div className="flex flex-row justify-between px-6 py-4 xl:px-0 md:py-8 md:justify-around">
+        <div className="font-antonio text-[1.75rem] tracking-[-0.0656rem] md:leading-none text-start md:text-center xl:text-start xl:mx-8">{title}</div>
         <button onClick={toggleMenu} className="md:hidden">
           <Image src="/images/icon-hamburger.svg" alt="three bar icon" width={24} height={17} className={showMenu ? 'opacity-20' : ''} />
         </button>
@@ -52,14 +52,14 @@ export default function NavBar({ title, items }: NavBarProps) {
           `${showMenu ? 'w-full px-6' : 'w-0'} border-t md:border-0 border-white/20 pt-[1.25rem] md:pt-0 transition-[width] ease-linear duration-300 fixed
           flex flex-col mt-[4.7rem] overflow-x-hidden h-full bg-black-russian
           max-md:divide-y max-md:divide-white/20
-          md:relative md:bg-transparent md:flex md:flex-row md:items-center md:w-auto md:gap-x-[2.0625rem] md:justify-around md:h-auto md:mt-[0.4375rem] lg:my-0 md:mx-12 lg:mx-0`
+          md:relative md:bg-transparent md:flex md:flex-row md:items-center md:w-auto md:gap-x-[2.0625rem] md:justify-around md:h-auto md:mt-[0.4375rem] xl:my-0 md:mx-12 xl:mx-0`
         }>
         { items.map((item) => (
           <Link
             key={item}
             href={`/${item}`}
             role="menuitem"
-            className={`font-spartan flex flex-row pt-5 pb-5 md:pt-0 md:pb-[1.6875rem] lg:pb-0 box-border items-center gap-x-6 border-t-4 border-transparent lg:h-full lg:transition-[border] lg:duration-300 lg:ease-linear ${hoverClassNames[item]}`}>
+            className={`font-spartan flex flex-row pt-5 pb-5 md:pt-0 md:pb-[1.6875rem] xl:pb-0 box-border items-center gap-x-6 border-t-4 border-transparent xl:h-full xl:transition-[border] xl:duration-300 xl:ease-linear ${hoverClassNames[item]}`}>
             <span className={`${circleColors[item]} rounded-full h-5 w-5 block md:hidden`}></span>
             <div className={`grow font-league-spartan text-[0.9375rem] font-spartan-bold leading-heading-3 tracking-[0.085rem] md:text-heading-4 md:leading-heading-3 md:tracking-heading-4`}>
               {item}
